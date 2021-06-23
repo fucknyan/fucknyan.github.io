@@ -121,24 +121,28 @@
  
 
     function output() {
-        let arr = ['<a class="t1" href="https://youtu.be/IIJH0y2O2y8" target="_blank">1</a>',
-            '<a class="t1" href="https://youtu.be/7TQqzmow7V8" target="_blank">2</a>',
-            '<a class="t1" href="https://youtu.be/PNhYz6RmIr4" target="_blank">3</a>',
-            '<a class="t1" href="https://youtu.be/lbmfHFuMi6s" target="_blank">4</a>',
-            '<a class="t1" href="https://soundcloud.com/bigbuu/j0k-nho-ft-kristin-nai-dien-akofficial-audio" target="_blank">5</a>',
-            '<a class="t1" href="https://soundcloud.com/vitcon96/nmndx" target="_blank">6</a>',
-            '<a class="t1" href="https://youtu.be/PGNNlkjD7wM" target="_blank">7</a>',
-            '<a class="t1" href="https://soundcloud.com/vergentboi/v-vk-x-kristin" target="_blank">8</a>',
-            '<a class="t1" href="https://youtu.be/wjQYokUhmjQ" target="_blank">9</a>',
-            '<a class="t1" href="https://youtu.be/o7iL2KzDh38" target="_blank">10</a>',
-            '<a class="t1" href="https://youtu.be/NgSFun7F8dI" target="_blank">11</a>',
-            '<a class="t1" href="https://youtu.be/l0Jo-9aqhYc" target="_blank">12</a>',
-            '<a class="t1" href="https://youtu.be/fOoSbUoayQE" target="_blank">13</a>',
-            '<a class="t1" href="https://youtu.be/O0kqkRvrO88" target="_blank">14</a>'];
+        let arr = ['"https://youtu.be/IIJH0y2O2y8"',
+            '"https://youtu.be/7TQqzmow7V8"',
+            '"https://youtu.be/PNhYz6RmIr4"',
+            '"https://youtu.be/lbmfHFuMi6s"',
+            '"https://soundcloud.com/bigbuu/j0k-nho-ft-kristin-nai-dien-akofficial-audio" ',
+            '"https://soundcloud.com/vitcon96/nmndx"',
+            '"https://youtu.be/PGNNlkjD7wM"',
+            '"https://soundcloud.com/vergentboi/v-vk-x-kristin"',
+            '"https://youtu.be/wjQYokUhmjQ"',
+            '"https://youtu.be/o7iL2KzDh38"',
+            '"https://youtu.be/NgSFun7F8dI"',
+            '"https://youtu.be/l0Jo-9aqhYc"',
+            '"https://youtu.be/fOoSbUoayQE"',
+            '"https://youtu.be/O0kqkRvrO88"'];
+
+        let numarr = Array.from(Array(14).keys())
         shuffleArray(arr);
+        shuffleArray(numarr)
         let temp = "";
         for (let i = 0; i < arr.length; i++) {
-            temp += arr[i];
+            let new_element = `<a class="t1" href=${arr[i]} target="_blank">${numarr[i]+1}</a>`
+            temp += new_element;
         }
 
         let output = document.getElementById('output');
