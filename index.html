@@ -89,7 +89,7 @@
 <body>
 
 
-    <div id="LMAO">
+    <div>
         <p class="t2">Random music</p>
         <p class="t3">(pick a number)</p>
         <div id="output"></div>
@@ -105,18 +105,11 @@
             
         </audio>
          -->
-        <div class="popup" onclick="myFunction()">Click me!
-            <span class="popuptext" id="myPopup">Popup text...</span>
-        </div>
+        
 
     </div>
 </body>
 <script>
-    // When the user clicks on <div>, open the popup
-    function myFunction() {
-        window.prompt("lmao");
-    }
-
     function shuffleArray(array) {
         for (var i = array.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1));
@@ -151,6 +144,43 @@
         output.innerHTML = temp;
     }
     output();
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+    function output() {
+        let arr = ['"https://youtu.be/IIJH0y2O2y8"',
+            '"https://youtu.be/7TQqzmow7V8"',
+            '"https://youtu.be/PNhYz6RmIr4"',
+            '"https://youtu.be/lbmfHFuMi6s"',
+            '"https://soundcloud.com/bigbuu/j0k-nho-ft-kristin-nai-dien-akofficial-audio" ',
+            '"https://soundcloud.com/vitcon96/nmndx"',
+            '"https://youtu.be/PGNNlkjD7wM"',
+            '"https://soundcloud.com/vergentboi/v-vk-x-kristin"',
+            '"https://youtu.be/wjQYokUhmjQ"',
+            '"https://youtu.be/o7iL2KzDh38"',
+            '"https://youtu.be/NgSFun7F8dI"',
+            '"https://youtu.be/l0Jo-9aqhYc"',
+            '"https://youtu.be/fOoSbUoayQE"',
+            '"https://youtu.be/O0kqkRvrO88"'];
+        shuffleArray(arr);
+        let temp = "";
+        for (let i = 0; i < arr.length; i++) {
+
+            let new_element = `<a class="t1" href=${arr[i]} target="_blank">${i+1}</a>`
+            temp += new_element;
+        }
+
+        let output = document.getElementById('output');
+        output.innerHTML = temp;
+    }
+    output();    
 </script>
 
 </html>
