@@ -1,0 +1,158 @@
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.8.3.min.js%22%3E"></script>
+    <script src="https://underscorejs.org/underscore-min.js%22%3E"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Random</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dela Gothic One">
+
+    <style>
+        .t2 {
+
+            font-family: "Dela Gothic One";
+            color: yellow;
+            font-size: 100;
+            padding: 0px;
+            margin-left: 30px;
+
+        }
+
+        .t3 {
+
+            font-family: "Dela Gothic One";
+            color: yellow;
+            font-size: 30;
+            margin-top: -120px;
+            letter-spacing: 2px;
+            margin-left: 30px;
+
+        }
+
+        .t1 {
+
+            font-family: "Dela Gothic One";
+            color: white;
+            font-size: 30;
+            margin-left: 30px;
+
+        }
+
+        .t4 {
+
+            font-family: "Dela Gothic One";
+            color: rgb(255, 215, 36);
+            font-size: 10;
+            margin-left: 30px;
+            position: fixed;
+            bottom: 20;
+            right: 25;
+
+            letter-spacing: 1px;
+
+
+        }
+
+        .t5 {
+            position: fixed;
+            left: 60;
+            bottom: 20;
+            background-color: rgb(255, 215, 36);
+
+
+        }
+
+        body {
+            background-color: black;
+
+            background-image: url("xxx.jpg");
+            background-size: cover;
+            position: relative;
+
+
+
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100vh;
+            z-index: -1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div id="LMAO">
+        <p class="t2">Random music</p>
+        <p class="t3">(pick a number)</p>
+        <div id="output"></div>
+
+        <a class="t4" href="https://youtu.be/-vJ0w44rpwc" target="_blank">không ấn cái này</a>
+        <!--
+    <video autoplay muted loop id="myVideo">
+        <source src="MVI_8813.MP4" type="video/mp4">
+    </video>    
+    -->
+        <!--
+        <audio class = "t5" src="low g 1.wav" controls autoplay>
+            
+        </audio>
+         -->
+        <div class="popup" onclick="myFunction()">Click me!
+            <span class="popuptext" id="myPopup">Popup text...</span>
+        </div>
+
+    </div>
+</body>
+<script>
+    // When the user clicks on <div>, open the popup
+    function myFunction() {
+        window.prompt("lmao");
+    }
+
+    function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+    }
+
+    function output() {
+        let arr = ['"https://youtu.be/IIJH0y2O2y8"',
+            '"https://youtu.be/7TQqzmow7V8"',
+            '"https://youtu.be/PNhYz6RmIr4"',
+            '"https://youtu.be/lbmfHFuMi6s"',
+            '"https://soundcloud.com/bigbuu/j0k-nho-ft-kristin-nai-dien-akofficial-audio" ',
+            '"https://soundcloud.com/vitcon96/nmndx"',
+            '"https://youtu.be/PGNNlkjD7wM"',
+            '"https://soundcloud.com/vergentboi/v-vk-x-kristin"',
+            '"https://youtu.be/wjQYokUhmjQ"',
+            '"https://youtu.be/o7iL2KzDh38"',
+            '"https://youtu.be/NgSFun7F8dI"',
+            '"https://youtu.be/l0Jo-9aqhYc"',
+            '"https://youtu.be/fOoSbUoayQE"',
+            '"https://youtu.be/O0kqkRvrO88"'];
+        shuffleArray(arr);
+        let temp = "";
+        for (let i = 0; i < arr.length; i++) {
+
+            let new_element = `<a class="t1" href=${arr[i]} target="_blank">${i+1}</a>`
+            temp += new_element;
+        }
+
+        let output = document.getElementById('output');
+        output.innerHTML = temp;
+    }
+    output();
+</script>
+
+</html>
