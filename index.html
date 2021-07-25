@@ -113,9 +113,11 @@
         <source src="01 (36).mov" type="video/mp4">
     </video>    
     
-        
+    <iframe src="meme.mp3" allow="autoplay" style="display:none" id="iframeAudio">
+    </iframe>
+    
         <audio autoplay loop>
-            <source src="meme.mp3" type="audio/mp3">
+            <source src="meme.mp3" type="audio/mp3"/>
         </audio>
          
         
@@ -167,7 +169,13 @@
     }
     output();
    
-    
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+  if (!isChrome){
+      $('#iframeAudio').remove()
+  }
+  else {
+      $('#playAudio').remove()
+  }
 
 
 </script>
