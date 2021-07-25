@@ -66,10 +66,12 @@
         body {
             background-color: black;
 
+        <!--
+
             background-image: url("xxx.jpg");
             background-size: cover;
             position: relative;
-
+        -->
 
 
         }
@@ -79,8 +81,21 @@
             right: 0;
             bottom: 0;
             min-width: 100%;
-            min-height: 100vh;
+            min-height: 100%;
             z-index: -1;
+        }
+            @media (min-aspect-ratio: 16/9) {
+                #myVideo {
+                    width:100%;
+                    height: auto;
+                }
+            }
+            @media (max-aspect-ratio: 16/9) {
+                #videoBG { 
+                    width:auto;
+                    height: 100%;
+                }
+            }
         }
     </style>
 
@@ -138,9 +153,10 @@
             '"https://youtu.be/fOoSbUoayQE"',
             '"https://youtu.be/O0kqkRvrO88"',
             '"https://youtu.be/Gd9OhYroLN0"',
-            '"https://youtu.be/Tm8LGxTLtQk"'];
+            '"https://youtu.be/Tm8LGxTLtQk"',
+            '"https://youtu.be/dYKU26Pt_HI"'];
 
-        let numarr = Array.from(Array(16).keys())
+        let numarr = Array.from(Array(17).keys())
         shuffleArray(arr);
         shuffleArray(numarr)
         let temp = "";
