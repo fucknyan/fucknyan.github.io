@@ -98,6 +98,31 @@
             background-position: center center;
 
         }
+        #countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            width: auto;
+            margin: 10% 20%;
+            background-color: black; /* Optional: adjust background color */
+            font-family: "Dela Gothic One", sans-serif;
+        }
+
+        #countdown {
+            background-color: rgba(214, 165, 28, 0.8); /* Semi-transparent background */
+            color: white;
+            padding: 10px 10px; /* Top/bottom and left/right padding */
+            text-decoration: none; /* Remove underline */
+            border-radius: 10px; /* Rounded corners */
+            font-size: 1.2rem; /* Font size */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transition */
+        }
+
+        #countdown:hover {
+            background-color: rgba(214, 165, 28, 1); /* Full opacity on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
         
       
         #Video {
@@ -122,16 +147,11 @@
                 }
             }
 
-}
-
-
     </style>
 
 </head>
 
 <body>
-
-
     <div>
         
         <p class="t2">Random music</p>
@@ -150,6 +170,38 @@
     -->
 
     </div>
+    <div id="countdown">WILDS: 00 days 00 hours 00 minutes 00 seconds</div>
+
+    <script>
+        // Target date
+        const countdownDate = new Date("Feb 28, 2025 00:00:00").getTime();
+
+        // Update countdown every second
+        const countdownFunction = setInterval(function() {
+
+            // Get current time
+            const now = new Date().getTime();
+
+            // Calculate distance between now and target date
+            const distance = countdownDate - now;
+
+            // Calculate days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display result
+            document.getElementById("countdown").innerHTML = `WILDS: ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+
+            // If countdown is finished
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Countdown has ended!";
+            }
+        }, 1000);
+    </script>
+
 </body>
 <script>
     function shuffleArray(array) {
@@ -228,5 +280,4 @@
 
 
 </script>
-
 </html>
